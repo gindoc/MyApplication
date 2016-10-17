@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by cwenhui on 2016.02.23
  */
@@ -68,9 +71,58 @@ public class FlowLayout extends LinearLayout {
 
     }
 
+    private List<List<View>> allViews = new ArrayList<>();
+    private List<Integer> lineHeights = new ArrayList<>();
+
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 //        super.onLayout(changed, l, t, r, b);
+        int count = getChildCount();
+        int width = getWidth();
+        List<View> lineViews = new ArrayList<>();
+        int lineWidth = 0;
+        int lineHeight = 0;
+        for (int i = 0; i < count; i++) {
+            View child = getChildAt(i);
+            MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
+            int childWidth = lp.leftMargin + child.getMeasuredWidth() + lp.rightMargin;
+            int childHeight = child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
+            if (lineWidth + childWidth > width) {
+                allViews.add(lineViews);
+                lineViews = new ArrayList<>();
+                lineWidth = 0;
+                lineHeights.add(lineHeight);
+                lineHeight = 0;
+            }
+            lineViews.add(child);
+            lineWidth = lineWidth + childWidth;
+            lineHeight = Math.max(lineHeight, childHeight);
+        }
+        allViews.add(lineViews);
+        lineHeights.add(lineHeight);
 
+        int left = 0;
+        int top = 0;
+        for (int i = 0; i < allViews.size(); i++) {
+            lineViews = allViews.get(i);
+            lineHeight = lineHeights.get(i);
+            for (int j = 0; j < lineViews.size(); j++) {
+                View child = lineViews.get(j);
+                if (child.getVisibility() == View.GONE)
+                {
+                    continue;
+                }
+                MarginLayoutParams lp = (MarginLayoutParams) child
+                        .getLayoutParams();
+                int childLeft = left + lp.leftMargin;
+                int childRight = childLeft + child.getMeasuredWidth();
+                int childTop = top + lp.topMargin;
+                int childBottom = childTop + child.getMeasuredHeight();
+                child.layout(childLeft, childTop, childRight, childBottom);
+                left += childRight + lp.rightMargin;
+            }
+            left = 0;
+            top += lineHeight;
+        }
     }
 }
