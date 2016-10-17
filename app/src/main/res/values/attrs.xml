@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopBar">
+        <attr name="titleText" format="string"/>
+        <attr name="titleSize" format="dimension"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="leftBackground" format="reference|color"/>
+        <attr name="leftColor" format="color"/>
+        <attr name="leftText" format="string"/>
+        <attr name="rightBackground" format="reference|color"/>
+        <attr name="rightColor" format="color"/>
+        <attr name="rightText" format="string"/>
+    </declare-styleable>
+
+
+    <!-- 圆形（角）图片1  -->
+    <attr name="borderRadius" format="dimension"/>
+    <attr name="type">
+        <enum name="circle" value="0"/>
+        <enum name="round" value="1"/>
+    </attr>
+    <attr name="src" format="reference"/>
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius"/>
+        <attr name="type"/>
+        <attr name="src"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView2">
+        <attr name="borderRadius"/>
+        <attr name="type"/>
+    </declare-styleable>
+</resources>
