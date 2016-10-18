@@ -3,7 +3,7 @@ package com.cwenhui.widget;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by cwenhui on 2016.02.23
  */
-public class FlowLayout extends LinearLayout {
+public class FlowLayout extends ViewGroup {
     private Context mContext;
 
     public FlowLayout(Context context) {
@@ -30,7 +30,7 @@ public class FlowLayout extends LinearLayout {
 
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return (LayoutParams) new MarginLayoutParams(mContext, attrs);
+        return new MarginLayoutParams(mContext, attrs);
     }
 
     @Override
@@ -77,6 +77,8 @@ public class FlowLayout extends LinearLayout {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 //        super.onLayout(changed, l, t, r, b);
+        allViews.clear();
+        lineHeights.clear();
         int count = getChildCount();
         int width = getWidth();
         List<View> lineViews = new ArrayList<>();
@@ -85,9 +87,9 @@ public class FlowLayout extends LinearLayout {
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
             MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-            int childWidth = lp.leftMargin + child.getMeasuredWidth() + lp.rightMargin;
-            int childHeight = child.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
-            if (lineWidth + childWidth > width) {
+            int childWidth = child.getMeasuredWidth();
+            int childHeight = child.getMeasuredHeight();
+            if (lineWidth + childWidth +lp.leftMargin+lp.rightMargin> width) {
                 allViews.add(lineViews);
                 lineViews = new ArrayList<>();
                 lineWidth = 0;
@@ -95,8 +97,8 @@ public class FlowLayout extends LinearLayout {
                 lineHeight = 0;
             }
             lineViews.add(child);
-            lineWidth = lineWidth + childWidth;
-            lineHeight = Math.max(lineHeight, childHeight);
+            lineWidth = lineWidth + childWidth+lp.leftMargin+lp.rightMargin;
+            lineHeight = Math.max(lineHeight, childHeight+lp.topMargin+lp.bottomMargin);
         }
         allViews.add(lineViews);
         lineHeights.add(lineHeight);
@@ -119,7 +121,7 @@ public class FlowLayout extends LinearLayout {
                 int childTop = top + lp.topMargin;
                 int childBottom = childTop + child.getMeasuredHeight();
                 child.layout(childLeft, childTop, childRight, childBottom);
-                left += childRight + lp.rightMargin;
+                left += child.getMeasuredWidth()+lp.leftMargin+lp.rightMargin;
             }
             left = 0;
             top += lineHeight;
