@@ -1,4 +1,4 @@
-package com.cwenhui.test;
+package com.cwenhui.test.fragmentTest;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -10,13 +10,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import com.cwenhui.test.R;
+
+public class FragmentActivity extends AppCompatActivity implements View.OnClickListener{
 //    private FragmentManager fragmentManager;
 //    private FragmentTransaction transaction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_fragment);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

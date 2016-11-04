@@ -10,13 +10,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".fragmentTest.FragmentActivity"
     android:orientation="horizontal"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_fragment">
 
     <fragment
         android:id="@+id/left_fragment"
-        android:name="com.cwenhui.test.LeftFragment"
+        android:name="com.cwenhui.test.fragmentTest.LeftFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -29,7 +29,7 @@
         android:layout_weight="1">
         <!--<fragment
             android:id="@+id/right_fragment"
-            android:name="com.cwenhui.test.RightFragment"
+            android:name="com.cwenhui.test.fragment.RightFragment"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_right"/>-->

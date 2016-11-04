@@ -1,4 +1,4 @@
-package com.cwenhui.test;
+package com.cwenhui.test.fragmentTest;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.cwenhui.test.R;
 
 /**
  * Created by cwenhui on 2016.02.23
