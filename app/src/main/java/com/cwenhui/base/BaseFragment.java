@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.cwenhui.dagger.component.FragmentComponent;
+import com.cwenhui.dagger.module.FragmentModule;
 import com.trello.rxlifecycle.LifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.RxLifecycle;
@@ -23,6 +25,7 @@ import rx.subjects.BehaviorSubject;
 public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragment implements LifecycleProvider<FragmentEvent> {
     private final BehaviorSubject<FragmentEvent> lifecycleSubject = BehaviorSubject.create();
     private T mPresent;
+    private FragmentComponent mComponent;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +38,14 @@ public abstract class BaseFragment<V, T extends BasePresenter<V>> extends Fragme
     }
 
     protected abstract T createPresent();
+
+    protected FragmentComponent getComponent() {
+        if (mComponent == null) {
+            mComponent = ((BaseActivity) getActivity()).getComponent()
+                    .plus(new FragmentModule());
+        }
+        return mComponent;
+    }
 
     @Nonnull
     @Override

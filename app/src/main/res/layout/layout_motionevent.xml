@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="motionEvent"/>
 
-    <com.cwenhui.motionevent.MyImageView
+    <com.cwenhui.module.motionevent.MyImageView
         android:id="@+id/myImageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

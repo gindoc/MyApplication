@@ -1,4 +1,4 @@
-package com.cwenhui.motionevent;
+package com.cwenhui.module.motionevent;
 
 import android.app.Activity;
 import android.os.Bundle;

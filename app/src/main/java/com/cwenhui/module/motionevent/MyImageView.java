@@ -1,4 +1,4 @@
-package com.cwenhui.motionevent;
+package com.cwenhui.module.motionevent;
 
 import android.content.Context;
 import android.util.AttributeSet;
