@@ -3,6 +3,7 @@ package com.cwenhui.dagger.component;
 
 import com.cwenhui.dagger.module.ActivityModule;
 import com.cwenhui.dagger.module.FragmentModule;
+import com.cwenhui.module.SideBarListView.SideBarListActivity;
 import com.cwenhui.module.main.MainActivity;
 
 import dagger.Subcomponent;
@@ -15,5 +16,5 @@ public interface ActivityComponent {
 
     FragmentComponent plus(FragmentModule module);
 
-
+    void inject(SideBarListActivity sideBarListActivity);
 }

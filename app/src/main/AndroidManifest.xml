@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cwenhui.test" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="com.cwenhui.base.App"
         android:allowBackup="true"
@@ -24,6 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name="com.cwenhui.module.motionevent.TestActivity" />
+        <activity android:name="com.cwenhui.module.SideBarListView.SideBarListActivity" />
     </application>
 
 </manifest>

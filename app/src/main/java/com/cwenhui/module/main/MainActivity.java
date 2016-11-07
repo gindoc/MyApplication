@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.cwenhui.base.BaseActivity;
 import com.cwenhui.base.BasePresenter;
+import com.cwenhui.module.SideBarListView.SideBarListActivity;
 import com.cwenhui.module.flowlayout.FlowLayoutActivity;
 import com.cwenhui.module.fragmentTest.FragmentActivity;
 import com.cwenhui.module.motionevent.KeyEventActivity;
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        String[] items = new String[]{"flowlayout", "fragmentTest", "motionEvent", "keyEvent"};
+        String[] items = new String[]{"flowlayout", "fragmentTest", "motionEvent", "keyEvent","sidebarList"};
         mAdapter.setData(Arrays.asList(items));
         mBinding.recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
@@ -67,6 +68,10 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
             case 3:
                 intent = new Intent(this, TestActivity.class);
                 break;
+            case 4:
+                intent = new Intent(this, SideBarListActivity.class);
+                break;
+
         }
         startActivity(intent);
 
