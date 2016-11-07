@@ -11,6 +11,7 @@ import com.cwenhui.test.R;
 import com.cwenhui.test.databinding.ActivitySidebarListBinding;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,7 +29,12 @@ public class SideBarListActivity extends BaseActivity implements SideBar.OnTouch
      * 汉字转换成拼音的类
      */
     private CharacterParser characterParser;
-    private List<SideBarListModel> SourceDateList;
+
+    /**
+     * 根据拼音来排列ListView里面的数据类
+     */
+    @Inject
+    PinyinComparator pinyinComparator;
 
     @Inject
     SortAdapter mSortAdapter;
@@ -40,9 +46,13 @@ public class SideBarListActivity extends BaseActivity implements SideBar.OnTouch
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_sidebar_list);
 
         characterParser = CharacterParser.getInstance();
-        SourceDateList = filledData(mResources.getStringArray(R.array.people), mResources.getStringArray(R.array.img_of_people));
+
+        List<SideBarListModel> sourceDateList = filledData(mResources.getStringArray(R.array.people), mResources.getStringArray(R.array.img_of_people));
+        // 根据a-z进行排序源数据
+        Collections.sort(sourceDateList, pinyinComparator);
+
         mSortAdapter.setLayoutId(R.layout.item_slidebar_list);
-        mSortAdapter.setmDatas(SourceDateList);
+        mSortAdapter.setmDatas(sourceDateList);
         mBinding.lvCountry.setAdapter(mSortAdapter);
 
         mBinding.sidebar.setTextView(mBinding.tips);

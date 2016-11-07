@@ -79,7 +79,8 @@ public class SideBar extends View {
 
         switch (action) {
             case MotionEvent.ACTION_UP:// 抬起
-                setBackgroundDrawable(new ColorDrawable(0x00000000));
+//                setBackgroundDrawable(new ColorDrawable(0x00000000));
+                setBackgroundColor(0);
                 choose = -1;//
                 invalidate();
                 if (mTextDialog != null) {
