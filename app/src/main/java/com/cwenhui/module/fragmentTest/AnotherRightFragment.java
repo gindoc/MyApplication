@@ -1,4 +1,4 @@
-package com.cwenhui.module.test.fragmentTest;
+package com.cwenhui.module.fragmentTest;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

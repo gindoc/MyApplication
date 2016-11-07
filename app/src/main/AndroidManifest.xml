@@ -20,6 +20,10 @@
         <activity android:name="com.cwenhui.module.motionevent.KeyEventActivity"/>
         <activity android:name="com.cwenhui.module.motionevent.MotionEventActivity"/>
         <activity android:name="com.cwenhui.module.flowlayout.FlowLayoutActivity" />
+        <activity android:name="com.cwenhui.module.fragmentTest.FragmentActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name="com.cwenhui.module.motionevent.TestActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.cwenhui.module.test.fragmentTest;
+package com.cwenhui.module.fragmentTest;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.cwenhui.module.fragmentTest.RightFragment;
 import com.cwenhui.test.R;
 
 public class FragmentActivity extends AppCompatActivity implements View.OnClickListener{

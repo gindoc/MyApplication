@@ -1,5 +1,6 @@
 package com.cwenhui.module.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -10,6 +11,11 @@ import android.widget.Toast;
 
 import com.cwenhui.base.BaseActivity;
 import com.cwenhui.base.BasePresenter;
+import com.cwenhui.module.flowlayout.FlowLayoutActivity;
+import com.cwenhui.module.fragmentTest.FragmentActivity;
+import com.cwenhui.module.motionevent.KeyEventActivity;
+import com.cwenhui.module.motionevent.MotionEventActivity;
+import com.cwenhui.module.motionevent.TestActivity;
 import com.cwenhui.test.R;
 import com.cwenhui.test.databinding.ActivityMainBinding;
 import com.cwenhui.widget.DividerItemDecoration;
@@ -36,7 +42,7 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        String[] items = new String[]{"flowlayout", "fragmentTest", "motionEvent"};
+        String[] items = new String[]{"flowlayout", "fragmentTest", "motionEvent", "keyEvent"};
         mAdapter.setData(Arrays.asList(items));
         mBinding.recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
@@ -47,6 +53,23 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
     @Override
     public void onItemClick(View view, int position) {
         Toast.makeText(this, "pos:" + position, Toast.LENGTH_SHORT).show();
+        Intent intent = null;
+        switch (position) {
+            case 0:
+                intent = new Intent(this, FlowLayoutActivity.class);
+                break;
+            case 1:
+                intent = new Intent(this, FragmentActivity.class);
+                break;
+            case 2:
+                intent = new Intent(this, MotionEventActivity.class);
+                break;
+            case 3:
+                intent = new Intent(this, TestActivity.class);
+                break;
+        }
+        startActivity(intent);
+
     }
 
     @Override

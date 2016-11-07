@@ -1,4 +1,4 @@
-package com.cwenhui.module.test.fragmentTest;
+package com.cwenhui.module.fragmentTest;
 
 import android.content.Context;
 import android.os.Bundle;

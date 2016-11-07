@@ -10,13 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.cwenhui.module.motionevent.test.fragmentTest.FragmentActivity"
     android:orientation="horizontal"
     tools:showIn="@layout/activity_fragment">
 
     <fragment
         android:id="@+id/left_fragment"
-        android:name="com.cwenhui.module.motionevent.test.fragmentTest.LeftFragment"
+        android:name="com.cwenhui.module.fragmentTest.LeftFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
