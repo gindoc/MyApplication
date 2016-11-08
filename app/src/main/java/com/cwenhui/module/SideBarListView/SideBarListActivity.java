@@ -73,7 +73,7 @@ public class SideBarListActivity extends BaseActivity implements SideBar.OnTouch
             sortModel.setImgSrc(imgData[i]);
             sortModel.setName(date[i]);
             // 汉字转换成拼音
-            String pinyin = characterParser.getSelling(date[i]);
+            String pinyin = characterParser.getSpelling(date[i]);
             String sortString = pinyin.substring(0, 1).toUpperCase();
 
             // 正则表达式，判断首字母是否是英文字母
