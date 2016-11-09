@@ -72,7 +72,7 @@ public class SideBar extends View {
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         final int action = event.getAction();
-        final float y = event.getY();// 点击y坐标
+        final float y = event.getY();// 点击y坐标，相对view的
         final int oldChoose = choose;
         final OnTouchingLetterChangedListener listener = onTouchingLetterChangedListener;
         final int c = (int) (y / getHeight() * b.length);// 点击y坐标所占总高度的比例*b数组的长度就等于点击b中的个数.
