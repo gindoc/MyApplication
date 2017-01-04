@@ -3,20 +3,20 @@ package com.cwenhui.module.main;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
 import com.cwenhui.base.BaseActivity;
 import com.cwenhui.base.BasePresenter;
+import com.cwenhui.module.PercentArc.PercentArcActivity;
 import com.cwenhui.module.SideBarListView.SideBarListActivity;
+import com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity;
 import com.cwenhui.module.flowlayout.FlowLayoutActivity;
 import com.cwenhui.module.fragmentTest.FragmentActivity;
-import com.cwenhui.module.motionevent.KeyEventActivity;
 import com.cwenhui.module.motionevent.MotionEventActivity;
 import com.cwenhui.module.motionevent.TestActivity;
+import com.cwenhui.module.stickyScrollView.StickyScrollViewActivity;
 import com.cwenhui.test.R;
 import com.cwenhui.test.databinding.ActivityMainBinding;
 import com.cwenhui.widget.DividerItemDecoration;
@@ -43,8 +43,7 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        String[] items = new String[]{"flowlayout", "fragmentTest", "motionEvent", "keyEvent","sidebarList"};
-        mAdapter.setData(Arrays.asList(items));
+        mAdapter.setData(Arrays.asList(getResources().getStringArray(R.array.activities)));
         mBinding.recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
         mBinding.recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
@@ -71,7 +70,15 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
             case 4:
                 intent = new Intent(this, SideBarListActivity.class);
                 break;
-
+            case 5:
+                intent = new Intent(this, PercentArcActivity.class);
+                break;
+            case 6:
+                intent = new Intent(this, StickyScrollViewActivity.class);
+                break;
+            case 7:
+                intent = new Intent(this, AutoHeaderVisibilityHeaderActivity.class);
+                break;
         }
         startActivity(intent);
 

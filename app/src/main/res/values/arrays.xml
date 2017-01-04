@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string-array name="activities">
+        <item>flowlayout</item>
+        <item>fragmentTest</item>
+        <item>motionEvent</item>
+        <item>keyEvent</item>
+        <item>sidebarList</item>
+        <item>percentArc</item>
+        <item>stickyScrollView</item>
+        <item>autoHeaderVisibilityHeader</item>
+    </string-array>
     <string-array name="people">
         <item>阿妹</item>
         <item>阿郎</item>

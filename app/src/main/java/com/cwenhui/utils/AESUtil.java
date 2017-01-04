@@ -6,6 +6,8 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+//import android.databinding.repacked.apache.commons.codec.binary.Base64;
+
 /**
  * Created by cwenhui on 2016/11/5.
  */

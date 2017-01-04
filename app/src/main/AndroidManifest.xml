@@ -26,6 +26,9 @@
         </activity>
         <activity android:name="com.cwenhui.module.motionevent.TestActivity" />
         <activity android:name="com.cwenhui.module.SideBarListView.SideBarListActivity" />
+        <activity android:name="com.cwenhui.module.PercentArc.PercentArcActivity"/>
+        <activity android:name="com.cwenhui.module.stickyScrollView.StickyScrollViewActivity"/>
+        <activity android:name="com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity"/>
     </application>
 
 </manifest>
