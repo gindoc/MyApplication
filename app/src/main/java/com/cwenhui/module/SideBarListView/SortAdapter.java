@@ -32,11 +32,11 @@ public class SortAdapter extends CommonAdapter<SideBarListModel> {
     @Override
     public void convert(ViewHolder holder, SideBarListModel sideBarListModel) {
         int pos = holder.getPosition();
+        TextView textView = holder.getView(R.id.catalog);
+        SideBarListModel bean = mDatas.get(pos);
         // 根据position获取分类的首字母的Char ascii值
         int section = getSectionForPosition(pos);
         // 如果当前位置等于该分类首字母的Char的位置 ，则认为是第一次出现
-        TextView textView = holder.getView(R.id.catalog);
-        SideBarListModel bean = mDatas.get(pos);
         if (pos == getPositionForSection(section)) {
             textView.setVisibility(View.VISIBLE);
             textView.setText(bean.getSortLetters());
