@@ -29,6 +29,7 @@
         <activity android:name="com.cwenhui.module.PercentArc.PercentArcActivity"/>
         <activity android:name="com.cwenhui.module.stickyScrollView.StickyScrollViewActivity"/>
         <activity android:name="com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity"/>
+        <activity android:name="com.cwenhui.module.DragMenu.DragMenuActivity"/>
     </application>
 
 </manifest>

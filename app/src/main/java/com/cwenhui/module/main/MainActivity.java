@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.cwenhui.base.BaseActivity;
 import com.cwenhui.base.BasePresenter;
+import com.cwenhui.module.DragMenu.DragMenuActivity;
 import com.cwenhui.module.PercentArc.PercentArcActivity;
 import com.cwenhui.module.SideBarListView.SideBarListActivity;
 import com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity;
@@ -79,6 +80,10 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
             case 7:
                 intent = new Intent(this, AutoHeaderVisibilityHeaderActivity.class);
                 break;
+            case 8:
+                intent = new Intent(this, DragMenuActivity.class);
+                break;
+
         }
         startActivity(intent);
 

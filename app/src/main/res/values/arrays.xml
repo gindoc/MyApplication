@@ -10,6 +10,7 @@
         <item>percentArc</item>
         <item>stickyScrollView</item>
         <item>autoHeaderVisibilityHeader</item>
+        <item>dragMenu</item>
     </string-array>
     <string-array name="people">
         <item>阿妹</item>
