@@ -11,6 +11,7 @@
         <item>stickyScrollView</item>
         <item>autoHeaderVisibilityHeader</item>
         <item>dragMenu</item>
+        <item>贝塞尔</item>
     </string-array>
     <string-array name="people">
         <item>阿妹</item>

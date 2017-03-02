@@ -30,6 +30,7 @@
         <activity android:name="com.cwenhui.module.stickyScrollView.StickyScrollViewActivity"/>
         <activity android:name="com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity"/>
         <activity android:name="com.cwenhui.module.DragMenu.DragMenuActivity"/>
+        <activity android:name="com.cwenhui.module.bezier.BezierActivity" />
     </application>
 
 </manifest>

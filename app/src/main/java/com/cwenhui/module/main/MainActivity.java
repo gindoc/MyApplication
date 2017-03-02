@@ -13,6 +13,7 @@ import com.cwenhui.module.DragMenu.DragMenuActivity;
 import com.cwenhui.module.PercentArc.PercentArcActivity;
 import com.cwenhui.module.SideBarListView.SideBarListActivity;
 import com.cwenhui.module.autoVisibilityHeader.AutoHeaderVisibilityHeaderActivity;
+import com.cwenhui.module.bezier.BezierActivity;
 import com.cwenhui.module.flowlayout.FlowLayoutActivity;
 import com.cwenhui.module.fragmentTest.FragmentActivity;
 import com.cwenhui.module.motionevent.MotionEventActivity;
@@ -82,6 +83,9 @@ public class MainActivity extends BaseActivity implements BaseRecyclerViewAdapte
                 break;
             case 8:
                 intent = new Intent(this, DragMenuActivity.class);
+                break;
+            case 9:
+                intent = new Intent(this, BezierActivity.class);
                 break;
 
         }

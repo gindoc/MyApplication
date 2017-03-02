@@ -36,4 +36,12 @@
         <attr name="percentText" format="string"/>
         <attr name="textSize" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="DragBubbleView">
+        <attr name="bubbleRadius" format="dimension" />
+        <attr name="bubbleColor" format="color" />
+        <attr name="bubbleText" format="string|reference" />
+        <attr name="bubbleTextColor" format="color" />
+        <attr name="bubbleTextSize" format="dimension" />
+    </declare-styleable>
 </resources>

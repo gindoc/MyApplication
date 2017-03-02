@@ -1,10 +1,9 @@
 package com.cwenhui.utils;
 
-//import android.databinding.repacked.apache.commons.codec.binary.Base64;
+import android.databinding.repacked.apache.commons.codec.binary.Base64;
 
 import android.support.annotation.NonNull;
 
-import org.apache.commons.codec.binary.Base64;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.ByteArrayInputStream;
